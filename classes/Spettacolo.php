@@ -1,28 +1,33 @@
 <?php
-class Spettacolo{
 
-    private $titolo;
-    private $orario;
-    private $postiLiberi;
-    private $durata;
-    private $regista;
-    private $cast = [];
+class Spettacolo {
+    private $data;
+    private $ora;
+    private $film;
+    private $sala;
 
-    public function __construct($_titolo, $_orario, $_biglietti, $_durata, $_regista, $_cast)
+    public function __construct($_data, $_ora, $_film, $_sala)
     {
-        $this->titolo = $_titolo;
-        $this->orario = $_orario;
-        $this->postiLiberi = (350 - $_biglietti);
-        $this->durata = $_durata;    
-        $this->regista = $_regista;
-        $this->cast = $_cast;
+        $this->data = $_data;
+        $this->ora = $_ora;
+        $this->film = $_film;
+        $this->sala = $_sala;
     }
 
-    public function getSala()
+    public function getData()
     {
-        return "{$this->titolo} {$this->orario} {$this->postiLiberi} {$this->durata} {$this->regista} {$this->cast}";
+       return $this->data;
     }
 
-    
+    public function getFilm()
+    {
+       return $this->film;
+    }
+
+    public function getOra()
+    {
+       return $this->ora;
+    }
 
 }
+
